@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Java</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background:#0c1022;
+    color: #fff;
+    
+}
+
+header {
+    text-align: center;
+    font-size: 35px;
+    font-family: cursive;color: red;
+    
+}
+.body {
+    color: yellowgreen;
+}
+img {
+  height: 200px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 20px;
+}
+    </style>
+
+
+</head>
+</head>
+<body>
+    <h1>Java</h1>
+    <header>
+        <a href="index.html" class="body">Home</a>
+    </header>
+    
+    <div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            
+            <h2>1.หาความยาวเส่นทแยงมุมของสี่เหลี่ยงผืนผ้า</h2>
+            <input id="base" type="text" placeholder="ป้อนความยาวของฐาน" fdprocessedid="d4txyt"> &nbsp;
+            <input id="height" type="text" placeholder="ป้อนความสูง" fdprocessedid="922xae">
+            <h4>ผลลัพธ์:<span id="show"></span></h4>
+            <center><button class="btn btn-outline-primary" onclick="calculateHypotenuse(document.getElementById('base').value, document.getElementById('height').value)" fdprocessedid="5cxur7">
+                คำนวน
+            </button></center> 
+        </div>
+        
+        
+        
+        <div class="box">
+            <h2>2.หาความยาวเส่นรอบวง</h2>
+            <input id="input" type="text" placeholder="รัศมี" fdprocessedid="9gpd2m">
+            <h4>ความยาวเส้นรอบวงกลม:<span id="result"></span></h4>
+            <center><button class="btn btn-outline-primary" onclick="calculateAndDisplayCircumference()" fdprocessedid="j1fn4">คำนวน</button></center>
+        </div>
+        
+        
+        <div class="box">
+            <h2>3.หาค่าอุภูมิ</h2>
+            <h4><span id="show1"></span></h4>
+            <center><button class="btn btn-outline-primary" onclick="fahrenheitToCelsius()" fdprocessedid="j4tsw9">กดปุ่ม</button></center>
+        </div>
+        
+        <div class="box">
+            <h2>4.หาค่าวันต่อนาที</h2>
+            <input type="text" id="daysInput" fdprocessedid="wigujs">
+            <h4><span id="show2"></span></h4>
+                <center><button class="btn btn-outline-primary" onclick="dayToSeconds()" fdprocessedid="2e2nm">คำนวน</button></center>
+            </div>
+            <div class="box">
+                <h2>5.A-Z</h2>
+                <h4><span id="show3">Z</span></h4>
+            </div>
+            
+            
+            
+            <script>
+                function printAlphabets() {
+                    for (let charCode = 65; charCode <= 90; charCode++) {
+                        const alphabet = String.fromCharCode(charCode);
+                        setTimeout(() => {
+                            console.log(alphabet);
+                        }, (charCode - 65) * 1000);
+                    }
+                }
+                
+                function printAlphabets() {
+                    let result = '';
+                    for (let charCode = 65; charCode <= 90; charCode++) {
+                        const alphabet = String.fromCharCode(charCode);
+                        setTimeout(() => {
+                            result = alphabet;
+                            document.getElementById('show3').innerText = result;
+                        }, (charCode - 65) * 1000);
+                    }
+                }
+                
+                printAlphabets();
+                
+                function dayToSeconds() {
+                    let inputDays = document.getElementById("daysInput").value;
+                    if (!isNaN(inputDays)) {
+                        let seconds = inputDays * 86400;
+                        document.getElementById(
+                            "show2"
+                            ).innerText = `จำนวนวัน ${inputDays} วัน: ${seconds} นาที`;
+                        } else {
+                            alert("Please enter a valid number of days.");
+                        }
+                    }
+                    
+                    // หาความยาวเส่นรอบวง
+                    function calculateCircleCircumference(radius) {
+                        return 2 * Math.PI * radius;
+                }
+                
+                function calculateAndDisplayCircumference() {
+                    let inputElement = document.getElementById("input");
+                    let resultElement = document.getElementById("result");
+                    
+                    let radius = parseFloat(inputElement.value);
+                    
+                    if (!isNaN(radius)) {
+                        let circumference = calculateCircleCircumference(radius);
+                        resultElement.textContent = circumference.toFixed(2);
+                    } else {
+                        resultElement.textContent = "กรุณากรอกค่าที่ถูกต้อง";
+                    }
+                }
+                
+                function fahrenheitToCelsius() {
+                    let inputFahrenheit = prompt("Enter temperature in Fahrenheit:");
+                    let celsiusValue = (parseFloat(inputFahrenheit) - 32) * (5 / 9);
+                    document.getElementById(
+                        "show1"
+                        ).innerText = `Fahrenheit: ${inputFahrenheit}°F, Celsius: ${celsiusValue.toFixed(
+                            2
+                            )}°C`;
+                        }
+                        
+                        // หาความยาวเส่นทแยงมุมของสี่เหลี่ยงผืนผ้า
+                        function calculateHypotenuse(base, height) {
+                            let result = Math.sqrt(base ** 2 + height ** 2);
+                            document.getElementById("show").innerHTML = result.toFixed(3);
+                        }
+                        </script>
+
+                        <div>
+<div class="container col-sm-12 col-md-5 main-content">
+    <div class="block-container">
+    <button type="button" onclick="rollDice();" class="btn btn-primary">Roll the dice</button>
+    </div>
+    <div class="block-container">
+    <!--<div id="dice"></div>-->
+      <img id="dice" class="dice" src="https://openclipart.org/download/282127/Die/1.svg">
+    </div>
+  </div>
+
+
+                        </div>
+
+<div>
+    <div class="container">
+  <h1> Random Dog </h1>
+  <img id="photo" src="https:\/\/dog.ceo\/api\/img\/deerhound-scottish\/n02092002_6780.jpg" alt="">
+  <button id="btn">Get Random Dog!</button>
+</div>
+    
+</div>
+
+<div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+    
+    <canvas id="barChart" style="width: 100%; max-width: 700px"></canvas>
+    
+    <script>
+          const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+          const yValues = [55, 49, 44, 24, 15];
+          const barColors = [
+              "#b91d47",
+              "#00aba9",
+              "#2b5797",
+              "#e8c3b9",
+              "#1e7145",
+            ];
+            
+            new Chart("myChart", {
+                type: "pie",
+                data: {
+                    labels: xValues,
+                    datasets: [
+                        {
+                            backgroundColor: barColors,
+                            data: yValues,
+                        },
+                    ],
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "World Wide Wine Production 2018",
+                    },
+                },
+            });
+            </script>
+
+<script>
+    const x = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+    
+    new Chart("barChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [
+                {
+                  data: [
+                      860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478,
+                    ],
+                    borderColor: "red",
+                    fill: false,
+                },
+                {
+                    data: [
+                        1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000,
+                    ],
+                    borderColor: "green",
+                    fill: false,
+                },
+                {
+                    data: [
+                        300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100,
+                    ],
+                    borderColor: "blue",
+                    fill: false,
+                },
+            ],
+        },
+        options: {
+            legend: { display: false },
+        },
+    });
+    </script>
+
+</div>
+<div>
+    
+    <script src="ramdom.js"></script>
+    
+</body>
+<script src="random3.js"></script>
+</html>

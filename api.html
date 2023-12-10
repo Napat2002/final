@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        * {
+            box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background:#0c1022;
+    color: #fff;
+    
+}
+
+header {
+    text-align: center;
+    font-size: 35px;
+    font-family: cursive;color: red;
+    
+}
+.body {
+    color: yellowgreen;
+}
+
+img {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: block;
+  min-width: 50%;
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto;
+  + p {
+     visibility: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    text-align: center;
+  }
+  &:hover + p {
+     visibility: visible;
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+button {
+  
+  padding: 10px;
+  margin: 0 auto 20px;
+}
+
+    </style>
+</head>
+<body>
+<h1>API</h1>
+    <header>
+      <a href="index.html" class="body">Home</a>
+    </header>
+
+    <div> 
+       <form
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbzdgB31m5LTgy61eaFx_BJiX9ap9ETu6sCC6dltNv9GiU9U7sEJy9qJ58ZSYyH2fu7E/exec"
+        >
+          <input name="Email" type="email" placeholder="Email" required />
+          <input name="Name" type="text" placeholder="Name" required />
+          <button type="submit">OK</button>
+        </form>
+<br>
+        <div class="w3-center w3-padding-24">
+        <iframe width="100%" height="500px"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc5Nc2BijHH8md1buLIv8D3lYEGqzPgupCa7eWvNmFG7oqShpx9a1blpkppPTIm1bkCAwaFhnYMdqE/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+        ></iframe>
+      </div>
+<br><br>
+
+
+<div>
+  <button id="pick">Random Country</button>
+
+<div>
+  <img id="flag" src="https://raw.githubusercontent.com/oxguy3/flags/master/svg/be.svg" alt="">
+  <p id="country">Bels</p>
+</div>
+</div>
+      
+      <div>
+        <div id="prices" style="color: white;"><div><p>1 USDT can buy:</p><div>
+        <li><div>1INCH: 2.5191057934508815816095</div></li>
+        <li><div>AAVE: 0.0102420502841927324435</div></li>
+        <li><div>ABT: 6.8405266757865937093025</div></li>
+        <li><div>ACH: 45.614951310178111224464</div></li>
+        <li><div>ACS: 334.3983014010097970129815</div></li>
+        <li><div>ADA: 1.6920473773265651</div></li>
+        <li><div>AED: 3.6726288135833333666695</div></li>
+        <li><div>BTC: 0.0000228331093786</div></li>
+        <li><div>ETH: 0.0004263328764466</div></li>
+      </div>
+    </div>
+  </div>
+      </div>
+<br><br>
+      <div>
+         <!-- แผนที่ -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831.382697053006!2d103.27097839999999!3d16.200753700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122a6ae121c1c2f%3A0x626cae9fcd86bf3d!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lih4Lir4Liy4Liq4Liy4Lij4LiE4Liy4Lih!5e0!3m2!1sth!2sth!4v1701927689927!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+
+    </div>
+
+    <script src="random2.js"></script>
+</body>
+</html>
